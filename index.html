@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RegRadar</title>
-<meta name="description" content="Discover possible UK private registrations, save favourites and prepare buyer and seller enquiries.">
+<title>RegRadar | The home of private number plates</title>
+<meta name="description" content="Search UK private registration ideas, explore independent dealer websites and save your favourite plates for free.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -14,7 +14,7 @@
    COLOUR white ground, road-black band #14181f, plate yellow #f7c600, UK blue #1d3f9a
    TYPE Barlow Condensed for plates and titles + Barlow for text
    LAYOUT dark band with title + big search, results grid beneath; phone: one column of plates */
-:root{color-scheme:light dark;--bg:light-dark(#ffffff,#111318);--ink:light-dark(#101418,#ecebe6);--mute:light-dark(#596070,#a5aab4);--line:light-dark(#e3e5e9,#2b2f37);--panel:light-dark(#f5f5f2,#1a1d23);--road:#14181f;--yel:#f7c600;--blue:#1d3f9a;--good:light-dark(#0f7a3d,#4fd38a)}
+:root{color-scheme:light;--bg:light-dark(#ffffff,#111318);--ink:light-dark(#101418,#ecebe6);--mute:light-dark(#596070,#a5aab4);--line:light-dark(#e3e5e9,#2b2f37);--panel:light-dark(#f5f5f2,#1a1d23);--road:#14181f;--yel:#f7c600;--blue:#1d3f9a;--good:light-dark(#0f7a3d,#4fd38a)}
 :root[data-theme=light]{color-scheme:light}
 :root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
@@ -72,30 +72,43 @@ a{color:var(--blue)}
 @media(prefers-reduced-motion:no-preference){.card{animation:pop .25s ease-out both}@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}}
 
 .toolform{display:grid;gap:12px;max-width:650px}.toolform label{display:grid;gap:4px;font-weight:600}.toolform input,.toolform textarea{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}.toolform textarea{min-height:90px}.output{white-space:pre-wrap;overflow-wrap:anywhere;margin:12px 0}.toolform button{justify-self:start}.savedrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:10px 0}.toolnav{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.toolnav a{color:#fff;border-color:#626873}.toolnav .btn{white-space:normal}.intro{max-width:70ch}.top{flex-wrap:wrap}.top nav{gap:12px}.top nav a{font-size:14px}
-</style>
+/* RegRadar 2.1: mobile layout and explicit hero contrast */
+header .toolnav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:720px;gap:8px;margin-top:16px}
+header .toolnav .btn{background:#f7c600;color:#111;border:1px solid #f7c600;white-space:normal;text-align:center;line-height:1.2;padding:8px;min-height:44px;font-size:15px}
+header .toolnav .btn:hover{background:#ffdf55}
+[hidden]{display:none!important}
+@media(max-width:600px){
+.hero{padding:10px 0 20px}.top{padding:10px 0;gap:6px}.top nav{gap:4px 12px;margin-left:0;width:100%}.top nav a{min-height:32px;font-size:13px}
+h1{font-size:36px}.sub{font-size:15px;line-height:1.4;margin-bottom:14px}
+form.search{flex-wrap:nowrap;gap:8px}form.search input{flex:1 1 0;width:0;min-height:48px;font-size:19px;padding:8px 10px}form.search button{min-height:48px;font-size:15px;padding:0 12px}
+.chips{flex-wrap:nowrap;overflow-x:auto;padding:4px 3px 7px;margin-top:8px}.chips button{flex:none;min-height:34px;font-size:13px;padding:0 11px}
+header .toolnav{margin-top:8px;gap:6px}header .toolnav .btn{font-size:13px;padding:7px 4px;min-height:46px}
+main .band{padding:24px 0}.grid{grid-template-columns:minmax(0,1fr);gap:12px}
+}
+
+/* Marketplace layout */
+:root{color-scheme:light;--bg:#fff;--ink:#151b24;--mute:#596575;--line:#dce1e7;--panel:#f3f5f7}
+body{background:#fff}.top{border-bottom:1px solid #ffffff25;padding:16px 0}.hero{padding:36px 0 28px}.eyebrow,.sectionlabel{font-size:12px;letter-spacing:.12em;font-weight:700;color:#a77c00}.eyebrow{color:#f7c600}.hero h1{max-width:750px}.searchbox{background:#fff;color:#151b24;border-radius:14px;padding:18px;max-width:780px;box-shadow:0 8px 24px #0002}.searchbox form.search{display:grid;gap:8px;max-width:none}.searchbox label{font-weight:600;font-size:14px}.searchline{display:flex;gap:8px}.searchbox input{border:1px solid #aab3bf!important;width:100%;flex:1}.searchbox select{font:inherit;color:#151b24;background:#fff;border:1px solid #aab3bf;border-radius:8px;padding:10px;width:100%}.trust{font-size:13px;color:#d5d9df;margin-bottom:0}.marketintro{background:#f3f5f7;border:1px solid #dce1e7;padding:20px;border-radius:14px;margin-bottom:28px}.marketintro p{margin:0 0 14px}.directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.directory a{background:white;border:1px solid #dce1e7;border-radius:8px;padding:12px;color:#151b24;text-decoration:none;font-weight:600}.card{box-shadow:0 3px 12px #1520300a}.links .btn{white-space:normal;text-align:center}.panel .btn{margin:4px}.sectionlabel{margin-bottom:8px}a{color:#1d3f9a!important}.logo,.top nav a{color:#fff!important}.btn{color:#111!important}.btn.ghost{color:#151b24!important}.directory a{color:#151b24!important}@media(max-width:600px){.hero{padding:20px 0}.searchbox{padding:12px}.searchline{gap:6px}.searchbox input{font-size:17px!important}.searchbox button{padding:0 10px!important}.directory a{font-size:14px;padding:10px}.top nav{justify-content:space-between}.marketintro{padding:14px}.hero h1{font-size:38px}}
+.searchline input{min-width:0;width:0!important;flex:1 1 0!important}.searchline button{flex:0 0 auto}#rt{scroll-margin-top:20px}.marketintro{margin-top:24px}#rt{scroll-margin-top:16px}#backSearch{margin:8px 0}.links .btn{min-height:44px} </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <div class="top"><a class="logo" href="#"><i aria-hidden="true"></i>RegRadar</a>
-      <nav aria-label="Main"><a href="#saved">Saved plates</a><a href="#value">Value</a><a href="#sell">Sell</a><a href="#wanted">Wanted</a><a href="#how">How it works</a><a href="#faq">Questions</a></nav></div>
-    <div class="hero">
-      <h1>Find a plate that feels like you</h1>
-      <p class="sub">Type a name, nickname or word. Discover possible UK registration spellings, save your favourites and plan your next purchase.</p>
-      <form class="search" id="f"><input id="q" value="SARAH" maxlength="12" autocomplete="off" aria-label="Name or word"><button type="submit">Find plates</button></form>
-      <div class="chips" id="ideas" aria-label="Try these"></div><div class="toolnav"><a class="btn ghost" href="#value">Estimate sale proceeds</a><a class="btn ghost" href="#sell">Prepare a listing</a><a class="btn ghost" href="#wanted">Create a wanted request</a></div>
-    </div>
+    <div class="top"><a class="logo" href="#"><i aria-hidden="true"></i>RegRadar</a><nav aria-label="Main"><a href="#market">Buy a plate</a><a href="#sell">Sell a plate</a><a href="#sold">Sold prices</a><a href="#saved">♡ Saved</a></nav></div>
+    <div class="hero"><p class="eyebrow">THE HOME OF PRIVATE NUMBER PLATES</p><h1>Find your perfect number plate.</h1><p class="sub">Search by name, initials or registration. Explore the market for free, with no account required.</p>
+    <div class="searchbox"><form class="search" id="f" action="#market"><label for="q">Name, initials or registration</label><div class="searchline"><input id="q" name="q" value="" maxlength="12" autocomplete="off" placeholder="e.g. SARAH or S4 RAH"><button type="submit">Search plates</button></div><label for="typeFilter">Registration style</label><select id="typeFilter"><option value="">Any style</option><option>Dateless</option><option>Prefix</option><option>Suffix</option><option>Current</option></select></form></div>
+    <p id="searchStatus" role="status" style="color:#fff;margin:8px 0"></p><div class="chips" id="ideas" aria-label="Try these"></div><p class="trust">Free to search · Independent · No subscription</p></div>
   </div>
 </header>
 
 <main>
-  <section class="band"><div class="wrap">
-    <h2 id="rt">Plates that spell SARAH</h2>
-    <p class="note" id="rnote"></p>
-    <div class="grid" id="res"></div>
+  <section class="band" id="market"><div class="wrap"><p class="sectionlabel">REGISTRATION DISCOVERY</p>
+    <h2 id="rt" tabindex="-1">Search results</h2>
+    <a href="#" id="backSearch" class="btn ghost">Change search</a><p class="note" id="rnote" aria-live="polite"></p>
+    <div class="grid" id="res"></div><div class="marketintro" id="marketDirectory"><h2>Explore the market</h2><p>Search these independent websites for actual stock and asking prices. RegRadar does not yet receive live inventory.</p><div class="directory"><a href="https://dvlaregistrations.dvla.gov.uk/" target="_blank" rel="noopener">DVLA Registrations ↗</a><a href="https://www.regtransfers.co.uk/" target="_blank" rel="noopener">Regtransfers ↗</a><a href="https://www.nationalnumbers.co.uk/" target="_blank" rel="noopener">National Numbers ↗</a><a href="https://www.plates4less.co.uk/" target="_blank" rel="noopener">Plates4Less ↗</a></div></div>
   </div></section>
 
-  <section class="band" id="saved"><div class="wrap"><h2>Your saved plates</h2><p class="note">Saved on this browser only. Not a live availability watchlist.</p><div id="savedList"></div></div></section>
+  <section class="band" id="sold"><div class="wrap"><div class="panel"><h2>Sold prices</h2><p>Our historical sales database is not available yet. Explore official DVLA auction information while we work towards a searchable archive.</p><a class="btn" href="https://dvlaregistrations.dvla.gov.uk/" target="_blank" rel="noopener">Explore DVLA auctions</a><a class="btn ghost" href="#value">Valuation worksheet</a></div></div></section><section class="band" id="saved"><div class="wrap"><h2>Your saved plates</h2><p class="note">Saved on this browser only. Not a live availability watchlist.</p><div id="savedList"></div></div></section>
   <section class="band" id="value" style="background:var(--panel)"><div class="wrap"><h2>Plate valuation worksheet</h2><p class="intro">Enter comparable completed sales you have independently found. We calculate their median and estimated net proceeds. This is not an independent valuation or a prediction of sale price.</p><form class="toolform" id="valForm"><label>Registration<input name="reg" required maxlength="12"></label><label>Comparable sale prices in pounds (comma separated, no currency symbols)<input name="prices" required placeholder="500, 650, 800"></label><label>Estimated selling costs (£)<input name="cost" type="number" min="0" step="0.01" value="0" required></label><button>Calculate</button></form><div class="output" id="valOut" aria-live="polite"></div></div></section>
   <section class="band" id="sell"><div class="wrap"><h2>Prepare your private listing</h2><p class="intro">Create a listing draft to share yourself. Nothing is published. Never include certificate numbers or photos of V750/V778 documents.</p><form class="toolform" id="sellForm"><label>Registration<input name="reg" maxlength="12" required></label><label>Asking price (£)<input name="price" type="number" min="1" step="0.01" required></label><label>Additional details (optional)<textarea name="details" maxlength="500"></textarea></label><button>Create listing draft</button></form><div class="output" id="sellOut" aria-live="polite"></div><button type="button" id="sellDownload" hidden>Save draft as text</button></div></section>
   <section class="band" id="wanted" style="background:var(--panel)"><div class="wrap"><h2>Wanted plate request</h2><p class="intro">Prepare a request to send to sellers or dealers yourself. No automatic alerts or submissions yet.</p><form class="toolform" id="wantForm"><label>Name or registration<input name="reg" maxlength="40" required></label><label>Maximum budget (£)<input name="price" type="number" min="1" step="0.01" required></label><button>Create request</button></form><div class="output" id="wantOut" aria-live="polite"></div><button type="button" id="wantDownload" hidden>Save request as text</button></div></section>
@@ -168,25 +181,30 @@ function describe(x,w){
   return `${x.swaps} letter${x.swaps>1?'s':''} as number${x.swaps>1?'s':''}`;
 }
 function render(word){
-  const w=word.toUpperCase().replace(/[^A-Z]/g,'');
-  $('rt').textContent=w?`Plates that spell ${w}`:'Type a name to start';
-  const list=w?spellings(w):[];
-  $('rnote').textContent=list.length?`${list.length} possible spellings, clearest first. Many will already be owned: check price to see what's for sale.`:'';
+  const raw=word.toUpperCase().replace(/[^A-Z0-9]/g,'');
+  const w=raw;
+  $('rt').textContent=w?`Registration ideas for ${w}`:'Type a name to start';
+  const exact=/\d/.test(w)?fmt(w):null;
+  const list=(exact?[{...exact,s:w,swaps:0,extra:0}]:/\d/.test(w)?[]:w?spellings(w):[]).filter(x=>!$('typeFilter').value||x.type===$('typeFilter').value);
+  $('rnote').textContent=list.length?`${list.length} format-based suggestions. Availability and prices are not verified.`:'';
   $('res').innerHTML=list.length?list.map((x,i)=>`<div class="card${i===0?' best':''}">${plate(x.disp)}
-      <div class="meta"><span>${esc(describe(x,w))}</span><span class="tag${i===0?' top':''}">${i===0?'Best match · ':''}${esc(x.type)}</span></div>
-      <p class="note" style="margin:0">${x.type==='Dateless'?'No age identifier; DVLA eligibility applies.':'Can only go on a car it does not make look newer.'}</p>
-      <div class="links">${PARTNERS.filter(p=>!p.sample).map(p=>`<a class="btn" href="${esc(p.url.replace('{reg}',encodeURIComponent(x.s)))}" rel="sponsored noopener" target="_blank">Check price: ${esc(p.name)}</a>`).join('')}<a class="btn ghost" href="${DVLA}" rel="noopener" target="_blank">Search DVLA</a><button type="button" class="btn ghost" data-save="${esc(x.disp)}">Save plate</button></div>
+      <div class="meta"><span>${exact?'Exact registration search':esc(describe(x,w))}</span><span class="tag${i===0?' top':''}">${i===0?'Best match · ':''}${esc(x.type)}</span></div>
+      <p style="font-size:20px;font-weight:700;margin:8px 0">Price not verified</p><p class="note" style="margin:0">${x.type==='Dateless'?'No age identifier; DVLA eligibility applies.':'Can only go on a car it does not make look newer.'}</p>
+      <div class="links">${PARTNERS.filter(p=>!p.sample).map(p=>`<a class="btn" href="${esc(p.url.replace('{reg}',encodeURIComponent(x.s)))}" rel="sponsored noopener" target="_blank">Check price: ${esc(p.name)}</a>`).join('')}<a class="btn" href="${DVLA}" rel="noopener" target="_blank">Check DVLA price &amp; availability</a><button type="button" class="btn ghost" data-copy="${esc(x.disp)}">Copy registration</button><a class="btn ghost" href="https://www.regtransfers.co.uk/" target="_blank" rel="noopener">Check dealer price &amp; availability</a><button type="button" class="btn ghost" data-save="${esc(x.disp)}">Save plate</button></div>
     </div>`).join('')
-    :(w?`<div class="empty" style="grid-column:1/-1"><h3>No plate formats fit "${esc(w)}"</h3><p class="note">Try a shorter version, a nickname or initials. Names up to 7 letters with A, E, I, O, S or T work best.</p></div>`:'');
-  try{history.replaceState(null,'',w?'#'+w:'#')}catch(e){}
+    :(w?`<div class="empty" style="grid-column:1/-1"><h3>No matching plate suggestions for "${esc(w)}"</h3><p class="note">Try another style filter, a shorter name, a nickname or initials. Names up to 7 letters with A, E, I, O, S or T work best.</p></div>`:'');
+  
 }
 $('ideas').innerHTML=IDEAS.map(i=>`<button type="button" data-w="${i}">${i}</button>`).join('');
-$('ideas').addEventListener('click',e=>{const w=e.target.dataset.w;if(w){$('q').value=w;render(w)}});
-$('f').addEventListener('submit',e=>{e.preventDefault();render($('q').value)});
-$('q').addEventListener('input',()=>{if($('q').value.trim().length>=2)render($('q').value)});
-const start=(location.hash.slice(1).match(/^[A-Za-z]{1,8}$/)||[])[0];
-if(start&&!['how','faq','saved','value','sell','wanted'].includes(start.toLowerCase()))$('q').value=start.toUpperCase();
-const initialHash=location.hash;render($('q').value);if(['#how','#faq','#saved','#value','#sell','#wanted'].includes(initialHash)){history.replaceState(null,'',initialHash);document.getElementById(initialHash.slice(1)).scrollIntoView()}
+function runSearch(){try{const query=$('q').value.trim();if(!query){$('q').focus();return;}render(query);try{const url=new URL(location.href);url.searchParams.set('q',query);url.hash='market';history.replaceState(null,'',url.href)}catch(e){};$('searchStatus').textContent=$('rnote').textContent||$('rt').textContent+' — no matching suggestions';$('q').blur();$('rt').focus({preventScroll:true});$('rt').scrollIntoView({block:'start',behavior:'instant'});}catch(e){$('searchStatus').textContent='Search could not complete. Please reload the page.';console.error(e);}}
+$('ideas').addEventListener('click',e=>{const w=e.target.dataset.w;if(w){$('q').value=w;$('typeFilter').value='';runSearch()}});
+$('f').addEventListener('submit',e=>{e.preventDefault();runSearch()});
+$('typeFilter').addEventListener('change',()=>runSearch());
+$('res').addEventListener('click',async e=>{if(e.target.dataset.copy){try{await navigator.clipboard.writeText(e.target.dataset.copy);e.target.textContent='Copied'}catch{alert('Registration: '+e.target.dataset.copy)}}});
+const legacy=location.hash.slice(1);const query=new URLSearchParams(location.search).get('q')||(/^[A-Z0-9]{1,12}$/.test(legacy)?legacy:'');
+$('q').value=query;render(query);
+$('backSearch').addEventListener('click',e=>{e.preventDefault();$('q').scrollIntoView({block:'center'});$('q').focus()});
+if(query&&location.hash==='#market')$('rt').scrollIntoView({block:'start'});
 let saved=[];try{const v=JSON.parse(localStorage.getItem('regradar.saved')||'[]');if(Array.isArray(v))saved=v.filter(x=>typeof x==='string')}catch(e){}
 function drawSaved(){ $('savedList').innerHTML=saved.length?saved.map(x=>`<div class="savedrow">${plate(x)}<button class="btn ghost" data-remove="${esc(x)}">Remove</button></div>`).join(''):'<p class="note">No saved plates yet.</p>'; }
 function persist(){try{localStorage.setItem('regradar.saved',JSON.stringify(saved))}catch(e){alert('Browser storage unavailable; saved plates will last only this session.')}drawSaved()}
