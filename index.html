@@ -89,18 +89,20 @@ main .band{padding:24px 0}.grid{grid-template-columns:minmax(0,1fr);gap:12px}
 /* Marketplace layout */
 :root{color-scheme:light;--bg:#fff;--ink:#151b24;--mute:#596575;--line:#dce1e7;--panel:#f3f5f7}
 body{background:#fff}.top{border-bottom:1px solid #ffffff25;padding:16px 0}.hero{padding:36px 0 28px}.eyebrow,.sectionlabel{font-size:12px;letter-spacing:.12em;font-weight:700;color:#a77c00}.eyebrow{color:#f7c600}.hero h1{max-width:750px}.searchbox{background:#fff;color:#151b24;border-radius:14px;padding:18px;max-width:780px;box-shadow:0 8px 24px #0002}.searchbox form.search{display:grid;gap:8px;max-width:none}.searchbox label{font-weight:600;font-size:14px}.searchline{display:flex;gap:8px}.searchbox input{border:1px solid #aab3bf!important;width:100%;flex:1}.searchbox select{font:inherit;color:#151b24;background:#fff;border:1px solid #aab3bf;border-radius:8px;padding:10px;width:100%}.trust{font-size:13px;color:#d5d9df;margin-bottom:0}.marketintro{background:#f3f5f7;border:1px solid #dce1e7;padding:20px;border-radius:14px;margin-bottom:28px}.marketintro p{margin:0 0 14px}.directory{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.directory a{background:white;border:1px solid #dce1e7;border-radius:8px;padding:12px;color:#151b24;text-decoration:none;font-weight:600}.card{box-shadow:0 3px 12px #1520300a}.links .btn{white-space:normal;text-align:center}.panel .btn{margin:4px}.sectionlabel{margin-bottom:8px}a{color:#1d3f9a!important}.logo,.top nav a{color:#fff!important}.btn{color:#111!important}.btn.ghost{color:#151b24!important}.directory a{color:#151b24!important}@media(max-width:600px){.hero{padding:20px 0}.searchbox{padding:12px}.searchline{gap:6px}.searchbox input{font-size:17px!important}.searchbox button{padding:0 10px!important}.directory a{font-size:14px;padding:10px}.top nav{justify-content:space-between}.marketintro{padding:14px}.hero h1{font-size:38px}}
-.searchline input{min-width:0;width:0!important;flex:1 1 0!important}.searchline button{flex:0 0 auto}#rt{scroll-margin-top:20px}.marketintro{margin-top:24px}#rt{scroll-margin-top:16px}#backSearch{margin:8px 0}.links .btn{min-height:44px} @media(max-width:600px){.hero{padding:16px 0}.chips{scrollbar-width:none}.chips::-webkit-scrollbar{display:none}} </style>
+.searchline input{min-width:0;width:0!important;flex:1 1 0!important}.searchline button{flex:0 0 auto}#rt{scroll-margin-top:20px}.marketintro{margin-top:24px}#rt{scroll-margin-top:16px}#backSearch{margin:8px 0}.links .btn{min-height:44px} @media(max-width:600px){.hero{padding:16px 0}.chips{scrollbar-width:none}.chips::-webkit-scrollbar{display:none}} 
+.skiplink{position:absolute;left:12px;top:8px;z-index:10;background:#fff;padding:10px;transform:translateY(-150%)}.skiplink:focus{transform:none}.marketintro .btn{white-space:normal;margin:4px 0}.savedrow .plate{max-width:100%}.searchline #clearSearch{background:#fff;border-color:#aab3bf;font-size:14px;padding:0 10px}.chips{scrollbar-width:thin}.chips::-webkit-scrollbar{display:block;height:4px}.chips::-webkit-scrollbar-thumb{background:#626873}.searchbox input{font-size:17px}.note a{font-weight:600}
+</style>
 <link rel="canonical" href="https://regradar.net/">
 <meta property="og:title" content="RegRadar | Private registration discovery">
 <meta property="og:description" content="Explore registration ideas and independent dealer websites for free.">
 <meta property="og:url" content="https://regradar.net/">
 </head>
-<body>
+<body><a class="skiplink" href="#q">Skip to search</a>
 <header>
   <div class="wrap">
-    <div class="top"><a class="logo" href="#"><i aria-hidden="true"></i>RegRadar</a><nav aria-label="Main"><a href="#market">Buy a plate</a><a href="#sell">Sell a plate</a><a href="#wanted">Track a plate</a><a href="plate-care.html">Plate care</a><a href="#saved">♡ Saved</a></nav></div>
+    <div class="top"><a class="logo" href="#"><i aria-hidden="true"></i>RegRadar</a><nav aria-label="Main"><a href="#market">Buy a plate</a><a href="#sell">Sell a plate</a><a href="#wanted">Track a plate</a><a href="plate-care.html">Plate care</a><a href="#saved">♡ Saved <span id="savedCount"></span></a></nav></div>
     <div class="hero"><p class="eyebrow">THE HOME OF PRIVATE NUMBER PLATES</p><h1>Find your perfect number plate.</h1><p class="sub">Search by name, initials or registration. Explore the market for free, with no account required.</p>
-    <div class="searchbox"><form class="search" id="f" action="#market"><label for="q">Name, initials or registration</label><div class="searchline"><input id="q" name="q" value="" maxlength="12" autocomplete="off" placeholder="e.g. SARAH or S4 RAH"><button type="submit">Search plates</button></div><label for="typeFilter">Registration style</label><select id="typeFilter"><option value="">Any style</option><option>Dateless</option><option>Prefix</option><option>Suffix</option><option>Current</option></select></form></div>
+    <div class="searchbox"><form class="search" id="f" action="#market"><label for="q">Name, initials or registration</label><div class="searchline"><input id="q" name="q" value="" maxlength="12" autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="search" placeholder="e.g. SARAH or S4 RAH"><button type="submit">Search plates</button><button type="button" id="clearSearch" hidden aria-label="Clear search">Clear</button></div><label for="typeFilter">Registration style</label><select id="typeFilter"><option value="">Any style</option><option>Dateless</option><option>Prefix</option><option>Suffix</option><option>Current</option></select></form></div>
     <p id="searchStatus" role="status" style="color:#fff;margin:8px 0"></p><div class="chips" id="ideas" aria-label="Try these"></div><p class="trust">Free to search · Independent · No subscription</p></div>
   </div>
 </header>
@@ -148,6 +150,7 @@ const PARTNERS = [
 const DVLA = 'https://dvlaregistrations.dvla.gov.uk/search#advancedSearch';
 // =================================
 
+let saved=[];
 const IDEAS=['SARAH','JAMES','TOM','PATEL','KHAN','DANNY','ELLIE','BOSS','MUM','KATE'];
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -187,7 +190,7 @@ function describe(x,w){
 function render(word){
   const raw=word.toUpperCase().replace(/[^A-Z0-9]/g,'');
   const w=raw;
-  $('rt').hidden=!w; $('backSearch').hidden=!w;
+  $('clearSearch').hidden=!word; $('rt').hidden=!w; $('backSearch').hidden=!w;
   $('rt').textContent=w?`Registration ideas for ${w}`:'Type a name to start';
   const exact=/\d/.test(w)?fmt(w):null;
   const list=(exact?[{...exact,s:w,swaps:0,extra:0}]:/\d/.test(w)?[]:w?spellings(w):[]).filter(x=>!$('typeFilter').value||x.type===$('typeFilter').value);
@@ -195,23 +198,26 @@ function render(word){
   $('res').innerHTML=list.length?list.map((x,i)=>`<div class="card${i===0?' best':''}">${plate(x.disp)}
       <div class="meta"><span>${exact?'Exact registration search':esc(describe(x,w))}</span><span class="tag${i===0?' top':''}">${i===0?'Best match · ':''}${esc(x.type)}</span></div>
       <p style="font-size:20px;font-weight:700;margin:8px 0">Price not verified</p><p class="note" style="margin:0">${x.type==='Dateless'?'No age identifier; DVLA eligibility applies.':'Can only go on a car it does not make look newer.'}</p>
-      <div class="links">${PARTNERS.filter(p=>!p.sample).map(p=>`<a class="btn" href="${esc(p.url.replace('{reg}',encodeURIComponent(x.s)))}" rel="sponsored noopener" target="_blank">Check price: ${esc(p.name)}</a>`).join('')}<a class="btn" href="${DVLA}" rel="noopener" target="_blank">Check DVLA price &amp; availability</a><button type="button" class="btn ghost" data-copy="${esc(x.disp)}">Copy registration</button><a class="btn ghost" href="https://www.regtransfers.co.uk/" target="_blank" rel="noopener">Check dealer price &amp; availability</a><button type="button" class="btn ghost" data-save="${esc(x.disp)}">Save plate</button></div>
+      <div class="links">${PARTNERS.filter(p=>!p.sample).map(p=>`<a class="btn" href="${esc(p.url.replace('{reg}',encodeURIComponent(x.s)))}" rel="sponsored noopener" target="_blank">Check price: ${esc(p.name)}</a>`).join('')}<a class="btn" href="${DVLA}" rel="noopener" target="_blank">Check DVLA price &amp; availability</a><button type="button" class="btn ghost" data-copy="${esc(x.disp)}">Copy registration</button><a class="btn ghost" href="https://www.regtransfers.co.uk/" target="_blank" rel="noopener">Check dealer price &amp; availability</a><button type="button" class="btn ghost" data-save="${esc(x.disp)}">Save plate</button><button type="button" class="btn ghost" data-want="${esc(x.disp)}">Prepare wanted request</button></div>
     </div>`).join('')
     :(w?`<div class="empty" style="grid-column:1/-1"><h3>No matching plate suggestions for "${esc(w)}"</h3><p class="note">Try another style filter, a shorter name, a nickname or initials. Names up to 7 letters with A, E, I, O, S or T work best.</p></div>`:'');
-  
+  document.querySelectorAll('[data-save]').forEach(b=>{const yes=saved.includes(b.dataset.save);b.textContent=yes?'Saved':'Save plate';b.setAttribute('aria-pressed',String(yes))});
 }
 $('ideas').innerHTML=IDEAS.map(i=>`<button type="button" data-w="${i}">${i}</button>`).join('');
 function runSearch(){try{const query=$('q').value.trim();if(!query){$('q').focus();return;}render(query);try{const url=new URL(location.href);url.searchParams.set('q',query);url.hash='market';history.replaceState(null,'',url.href)}catch(e){};$('searchStatus').textContent=$('rnote').textContent||$('rt').textContent+' — no matching suggestions';$('q').blur();$('rt').focus({preventScroll:true});$('rt').scrollIntoView({block:'start',behavior:'instant'});}catch(e){$('searchStatus').textContent='Search could not complete. Please reload the page.';console.error(e);}}
 $('ideas').addEventListener('click',e=>{const w=e.target.dataset.w;if(w){$('q').value=w;$('typeFilter').value='';runSearch()}});
 $('f').addEventListener('submit',e=>{e.preventDefault();runSearch()});
+$('q').addEventListener('input',()=>{$('clearSearch').hidden=!$('q').value});
+$('clearSearch').addEventListener('click',()=>{$('q').value='';$('typeFilter').value='';render('');$('searchStatus').textContent='';try{const u=new URL(location.href);u.searchParams.delete('q');u.hash='';history.replaceState(null,'',u.href)}catch{}$('q').focus()});
+$('res').addEventListener('click',e=>{const w=e.target.dataset.want;if(w){const input=$('wantForm').elements.namedItem('reg');input.value=w;$('wantOut').textContent='';$('wantDownload').hidden=true;location.hash='wanted';input.focus({preventScroll:true})}});
 $('typeFilter').addEventListener('change',()=>runSearch());
 $('res').addEventListener('click',async e=>{if(e.target.dataset.copy){try{await navigator.clipboard.writeText(e.target.dataset.copy);e.target.textContent='Copied'}catch{alert('Registration: '+e.target.dataset.copy)}}});
 const legacy=location.hash.slice(1);const query=new URLSearchParams(location.search).get('q')||(/^[A-Z0-9]{1,12}$/.test(legacy)?legacy:'');
 $('q').value=query;render(query);
 $('backSearch').addEventListener('click',e=>{e.preventDefault();$('q').scrollIntoView({block:'center'});$('q').focus()});
 if(query&&location.hash==='#market')$('rt').scrollIntoView({block:'start'});
-let saved=[];try{const v=JSON.parse(localStorage.getItem('regradar.saved')||'[]');if(Array.isArray(v))saved=v.filter(x=>typeof x==='string')}catch(e){}
-function drawSaved(){ $('savedList').innerHTML=saved.length?saved.map(x=>`<div class="savedrow">${plate(x)}<button class="btn ghost" data-remove="${esc(x)}">Remove</button></div>`).join(''):'<p class="note">No saved plates yet.</p>'; }
+try{const v=JSON.parse(localStorage.getItem('regradar.saved')||'[]');if(Array.isArray(v))saved=v.filter(x=>typeof x==='string')}catch(e){}
+function drawSaved(){ $('savedCount').textContent=saved.length?'('+saved.length+')':''; document.querySelectorAll('[data-save]').forEach(b=>{const yes=saved.includes(b.dataset.save);b.textContent=yes?'Saved':'Save plate';b.setAttribute('aria-pressed',String(yes))}); $('savedList').innerHTML=saved.length?saved.map(x=>`<div class="savedrow">${plate(x)}<button class="btn ghost" data-remove="${esc(x)}">Remove</button></div>`).join(''):'<p class="note">No saved plates yet.</p>'; }
 function persist(){try{localStorage.setItem('regradar.saved',JSON.stringify(saved))}catch(e){alert('Browser storage unavailable; saved plates will last only this session.')}drawSaved()}
 $('res').addEventListener('click',e=>{const x=e.target.dataset.save;if(x){if(!saved.includes(x)){saved.push(x);persist()}e.target.textContent='Saved'}});
 $('savedList').addEventListener('click',e=>{const x=e.target.dataset.remove;if(x){saved=saved.filter(v=>v!==x);persist();document.querySelectorAll('[data-save]').forEach(b=>{if(b.dataset.save===x)b.textContent='Save plate'})}});drawSaved();
