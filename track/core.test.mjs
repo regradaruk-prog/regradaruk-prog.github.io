@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {validate,matches} from './core.mjs';
+const x={registration:'ab12 xyz',email:'test@example.invalid',budgetPence:50000,consent:true};
+assert.equal(validate(x).registration,'AB12XYZ');
+for(const p of [{consent:false},{email:'bad'},{budgetPence:-1},{registration:'<script>'},{registration:'SARAH'}])assert.throws(()=>validate({...x,...p}));
+const r={registration:'AB12XYZ',status:'verified',expires_at:200,budget_pence:50000};
+const l={registration:'AB12XYZ',approved:1,permission_ref:'synthetic',expires_at:200,total_pence:40000};
+assert.equal(matches(r,l,100),true);
+for(const p of [{approved:0},{permission_ref:''},{expires_at:99},{total_pence:60000}])assert.equal(matches(r,{...l,...p},100),false);
+assert.equal(matches({...r,status:'pending'},l,100),false);
+console.log('Track core tests passed');
