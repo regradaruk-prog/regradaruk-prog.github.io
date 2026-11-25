@@ -100,7 +100,7 @@ body{background:#fff}.top{border-bottom:1px solid #ffffff25;padding:16px 0}.hero
 <meta property="og:title" content="RegRadar | Private registration discovery">
 <meta property="og:description" content="Explore registration ideas and independent dealer websites for free.">
 <meta property="og:url" content="https://regradar.net/">
-</head>
+<style>.return-top{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));right:16px;z-index:100;display:flex;align-items:center;gap:7px;background:#14181f;color:#fff!important;border:1px solid #f7c600;border-radius:30px;padding:10px 16px;min-height:44px;font:600 14px system-ui,sans-serif;box-shadow:0 4px 16px #0003;cursor:pointer}.return-top[hidden]{display:none!important}.return-top:focus-visible{outline:3px solid #f7c600;outline-offset:3px}body{padding-bottom:76px}</style></head>
 <body><a class="skiplink" href="#q">Skip to search</a>
 <div class="preview-notice">Development preview · No live listings or automatic alerts</div><header>
   <div class="wrap">
@@ -232,5 +232,5 @@ draft('sellForm','sellOut','sellDownload',f=>`PRIVATE REGISTRATION FOR SALE\n${S
 draft('wantForm','wantOut','wantDownload',f=>`WANTED: ${String(f.get('reg')).toUpperCase()}\nMaximum budget: ${money(Number(f.get('price')))}\nPlease confirm availability, total cost and transfer eligibility.`);
 }
 </script>
-<script>function updateNavigation(){const section=location.pathname.endsWith('plate-care.html')?'care':(['sell','wanted','saved'].includes(location.hash.slice(1))?location.hash.slice(1):'market');document.querySelectorAll('[data-section]').forEach(a=>{if(a.dataset.section===section)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})}updateNavigation();window.addEventListener('hashchange',updateNavigation);</script></body>
+<script>function updateNavigation(){const section=location.pathname.endsWith('plate-care.html')?'care':(['sell','wanted','saved'].includes(location.hash.slice(1))?location.hash.slice(1):'market');document.querySelectorAll('[data-section]').forEach(a=>{if(a.dataset.section===section)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})}updateNavigation();window.addEventListener('hashchange',updateNavigation);</script><button type="button" class="return-top" id="returnTop" hidden aria-label="Return to top of page"><span aria-hidden="true">↑</span> Back to top</button><script>(()=>{const b=document.getElementById('returnTop');const sync=()=>{b.hidden=window.scrollY<220};window.addEventListener('scroll',sync,{passive:true});window.addEventListener('pageshow',sync);b.addEventListener('click',()=>{const target=document.querySelector('header a.logo, header a, h1');if(target){if(!target.matches('a,button,input'))target.setAttribute('tabindex','-1');target.focus({preventScroll:true})}window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})});sync()})();</script></body>
 </html>
