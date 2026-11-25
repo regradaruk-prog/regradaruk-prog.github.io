@@ -1,5 +1,9 @@
 #!/bin/sh
 set -eu
+rm -rf preview-public
 mkdir -p preview-public
-printf '%s\n' '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Development environment</title><h1>Development environment</h1><p>Website setup in progress.</p></html>' > preview-public/index.html
-printf '%s\n' '/*' '  X-Robots-Tag: noindex, nofollow' > preview-public/_headers
+for page in index.html plate-care.html; do
+  sed 's/RegRadar/PlateLoft/g; /rel="canonical"/d; /property="og:url"/d' "$page" > "preview-public/$page"
+done
+printf '%s\n' '/*' '  X-Robots-Tag: noindex, nofollow' '  Referrer-Policy: no-referrer' > preview-public/_headers
+printf '%s\n' 'User-agent: *' 'Disallow: /' > preview-public/robots.txt
