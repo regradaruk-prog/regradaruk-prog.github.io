@@ -1,0 +1,8 @@
+# Production launch gates — draft, not legal advice
+Before collecting personal data: confirm controller identity/contact, lawful bases, privacy notice, processor contracts, international transfers, appropriate ICO fee status, security and rights/deletion process. Separate requested alerts from marketing; assess PECR for commercial alerts, record any required consent and offer cancellation. Proposed pending verification expiry 48h, verified request expiry 90 days, subject to review. No certificate numbers or photos. No personal records or secrets in public repositories.
+Before public listings: review consumer protection, trader/private seller labels, paid ranking disclosure, Online Safety Act scope, moderation, takedown and fraud reporting; assess marketplace reporting, registration entitlement classification and payment knowledge with adviser. HMRC guidance includes a direct-payment marketplace example where actual consideration is not known or readily ascertainable; this is not blanket exemption.
+Before charging: approve terms, advertised total prices, cancellation/refunds, invoicing and VAT position. Avoid holding purchase funds. Assess insurance and liability.
+Before release: test verification, expiry, cancellation, abuse controls, permission enforcement and accessibility; obtain owner approval. No policy goes live through this draft.
+References:
+https://www.gov.uk/guidance/check-if-you-need-to-register-as-a-digital-platform-operator
+https://ico.org.uk/for-organisations/advice-for-small-organisations/direct-marketing-and-data-protection/marketing-and-data-protection-in-detail/
