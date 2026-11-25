@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {normalize,matchExact,reviewReasons} from './core.mjs';
+const now=Date.parse('2026-11-25T12:00:00Z'),expiresAt='2026-12-01T00:00:00Z';
+const request={registration:'AB12 XYZ',status:'verified',budgetPence:50000,expiresAt};
+const listing={registration:'ab12xyz',status:'approved',authorised:true,totalPence:40000,expiresAt,sellerType:'private'};
+assert.equal(normalize('ab12 xyz'),'AB12XYZ');
+assert.equal(normalize('<script>'),null);
+assert.equal(matchExact(request,listing,now),true);
+for(const patch of [{authorised:false},{status:'pending'},{totalPence:50001},{expiresAt:'2026-11-01'},{registration:'AB12 ABC'},{totalPence:NaN}])assert.equal(matchExact(request,{...listing,...patch},now),false);
+assert.equal(matchExact({...request,status:'pending'},listing,now),false);
+assert.deepEqual(reviewReasons(listing),[]);
+assert.ok(reviewReasons({...listing,description:'V778 reference'}).length);
+console.log('Marketplace core checks passed');
